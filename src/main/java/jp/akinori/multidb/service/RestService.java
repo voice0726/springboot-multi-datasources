@@ -1,7 +1,7 @@
 package jp.akinori.multidb.service;
 
-import jp.akinori.multidb.dao.MysqlDao.ClientDao;
-import jp.akinori.multidb.entity.primary.User;
+import jp.akinori.multidb.dao.mysqlDao.ClientDao;
+import jp.akinori.multidb.entity.User;
 import jp.akinori.multidb.repository.secondary.PostgresRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

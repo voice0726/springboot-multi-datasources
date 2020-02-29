@@ -7,7 +7,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -22,7 +21,7 @@ import javax.sql.DataSource;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        basePackages = "jp.akinori.multidb.dao",
+        basePackages = "jp.akinori.multidb.dao.mysqlDao",
         entityManagerFactoryRef = "client2EntityManager",
         transactionManagerRef = "client2TransactionManager"
 )
@@ -45,7 +44,7 @@ public class Client2DataSourceConfig {
     @Autowired
     public LocalContainerEntityManagerFactoryBean client2EntityManager(EntityManagerFactoryBuilder builder,@Qualifier("client2DataSource") DataSource dataSource){
         return builder.dataSource(dataSource)
-                .packages("jp.akinori.multidb.entity.client2")
+                .packages("jp.akinori.multidb.entity")
                 .persistenceUnit("client2")
                 .build();
     }

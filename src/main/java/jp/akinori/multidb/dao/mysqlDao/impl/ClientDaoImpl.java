@@ -1,7 +1,7 @@
-package jp.akinori.multidb.dao.MysqlDao.impl;
+package jp.akinori.multidb.dao.mysqlDao.impl;
 
-import jp.akinori.multidb.dao.MysqlDao.ClientDao;
-import jp.akinori.multidb.entity.primary.User;
+import jp.akinori.multidb.dao.mysqlDao.ClientDao;
+import jp.akinori.multidb.entity.User;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.EntityManager;

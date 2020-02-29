@@ -1,17 +1,15 @@
-package jp.akinori.multidb.entity.primary;
+package jp.akinori.multidb.entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * @author aha-oretama
  */
 @Entity
 @Data
+@Table(name = "client_user")
 public class User {
 
   @Id

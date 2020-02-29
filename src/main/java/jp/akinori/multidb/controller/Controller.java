@@ -1,6 +1,6 @@
 package jp.akinori.multidb.controller;
 
-import jp.akinori.multidb.entity.primary.User;
+import jp.akinori.multidb.entity.User;
 import jp.akinori.multidb.service.RestService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

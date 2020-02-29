@@ -1,4 +1,4 @@
-package jp.akinori.multidb.dao.MysqlDao.impl;
+package jp.akinori.multidb.dao.mysqlDao.impl;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;

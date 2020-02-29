@@ -22,7 +22,7 @@ import javax.sql.DataSource;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        basePackages = "jp.akinori.multidb.dao",
+        basePackages = "jp.akinori.multidb.dao.mysqlDao",
         entityManagerFactoryRef = "client1EntityManager",
         transactionManagerRef = "client1TransactionManager"
 )
@@ -48,7 +48,7 @@ public class Client1DataSourceConfig {
     @Autowired
     public LocalContainerEntityManagerFactoryBean client1EntityManager(EntityManagerFactoryBuilder builder,@Qualifier("client1DataSource") DataSource dataSource){
         return builder.dataSource(dataSource)
-                .packages("jp.akinori.multidb.entity.client1")
+                .packages("jp.akinori.multidb.entity")
                 .persistenceUnit("client1")
                 .build();
     }

@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 
@@ -17,6 +18,7 @@ import javax.sql.DataSource;
  * @author akinori
  */
 @Configuration
+@EnableTransactionManagement
 @EnableJpaRepositories(
         basePackages = "jp.akinori.multidb.repository.secondary",
         entityManagerFactoryRef = "secondaryEntityManager",
@@ -41,7 +43,7 @@ public class SecondaryDataSourceConfig {
     @Autowired
     public LocalContainerEntityManagerFactoryBean secondaryEntityManager(EntityManagerFactoryBuilder builder,@Qualifier("secondaryDataSource") DataSource dataSource){
         return builder.dataSource(dataSource)
-                .packages("jp.akinori.multidb.entity.primary")
+                .packages("jp.akinori.multidb.entity")
                 .persistenceUnit("secondary")
                 .build();
     }

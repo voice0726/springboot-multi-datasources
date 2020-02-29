@@ -1,6 +1,6 @@
 package jp.akinori.multidb.repository.primary;
 
-import jp.akinori.multidb.entity.primary.User;
+import jp.akinori.multidb.entity.User;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
